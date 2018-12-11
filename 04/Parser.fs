@@ -21,7 +21,7 @@ with
         }
 
     static member toTimeStamp self =
-        sprintf "%i%i%i%i%i" self.Year self.Month self.Day self.Hour self.Minute
+        sprintf "%i%02i%02i%02i%02i" self.Year self.Month self.Day self.Hour self.Minute
 
 type EventType =
     | ShiftBegin of int
