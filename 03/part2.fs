@@ -1,15 +1,7 @@
 open System.Text.RegularExpressions
 open System.IO
 
-type Rect = {
-    Id: int
-    X1: int
-    Y1: int
-    X2: int
-    Y2: int
-    W : int
-    H : int
-}
+type Rect = { Id: int; X1: int; Y1: int; X2: int; Y2: int }
 with
     static member create (arr: int array) ={
         Id = arr.[0]
@@ -17,8 +9,6 @@ with
         Y1 = arr.[2]
         X2 = arr.[1] + arr.[3] - 1
         Y2 = arr.[2] + arr.[4] - 1
-        W  = arr.[3]
-        H  = arr.[4]
     }
 
     static member overlaps (r1: Rect) (r2: Rect) =
